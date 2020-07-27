@@ -15,7 +15,7 @@ myos = "UBPorts"
 build_number = input("Build Number: ")
 mydate = str(date.today())
 device = "PinePhone - CE UBPorts"
-title = "{0} - {1} - {2} ".format(mydate, device, myos)
+title = "{0} - {1} ".format(mydate, myos)
 magic_number = 0
 
 myTests = ''
@@ -37,12 +37,13 @@ while magic_number < 1:
 
 HEADER = HEADER.replace("###TITLE###", title)
 BODY = BODY.replace("###DEVICE###", device)
+BODY = BODY.replace("###OS###", myos)
 BODY = BODY.replace("###BUILD###", build_number)
 BODY = BODY.replace("###DATE###", mydate)
 
 myDocument = HEADER + BODY + myTests + TESTFOOTER + FOOTER
 
-with open("{0}/{1}.html".format(myos, mydate), 'w') as outfile:
+with open("{0}/{1}.html".format(myos.lower(), mydate), 'w') as outfile:
     outfile.write(myDocument)
 
 print("Done")
