@@ -32,7 +32,7 @@ while magic_number < 1:
     testblock = testblock.replace('###TEST-NAME###', TESTNAME)
     testblock = testblock.replace('###TEST-DESCRIPTION###', TESTDESC)
     testblock = testblock.replace('###TEST-NOTES###', TESTNOTES)
-    testblock = testblock.replace('###TEST-RESULTS###', RESULTS)
+    testblock = testblock.replace('###TEST-RESULTS###', RESULTS.upper())
     myTests += testblock
 
 HEADER = HEADER.replace("###TITLE###", title)
