@@ -17,7 +17,7 @@ mydate = str(date.today())
 device = "PinePhone - CE UBPorts"
 title = "{0} - {1} ".format(mydate, myos)
 magic_number = 0
-
+build_stat = 'pass'
 myTests = ''
 
 while magic_number < 1:
@@ -37,11 +37,13 @@ while magic_number < 1:
         testblock = testblock.replace('###RESULTS-COLOR###', 'tg-pass')
     else:
         testblock = testblock.replace('###RESULTS-COLOR###', 'tg-fail')
+        build_stat = 'fail'
     myTests += testblock
 
 HEADER = HEADER.replace("###TITLE###", title)
 BODY = BODY.replace("###DEVICE###", device)
 BODY = BODY.replace("###OS###", myos)
+BODY = BODY.replace("###RESULT###", build_stat.upper())
 BODY = BODY.replace("###BUILD###", build_number)
 BODY = BODY.replace("###DATE###", mydate)
 
