@@ -1,0 +1,55 @@
+tests:
+    - name: "Inbound Call"
+      description: "Taking a call phone a known good source (iphone and android)"
+      steps: 
+          - "Call phone from remote device"
+          - "Answer Call and begin conversation"
+          - "Keep an eye out for: clarity, audio routing, and volume"
+    - name: "Outbound Call"
+      description: "Make a call to a known good source."
+      steps:
+          - "Call a remote device"
+          - "Answer Call and begin conversation"
+          - "Keep an eye out for: clarity, audio routing, and volume"
+    - name: "SMS inbound"
+      description: "Recieve text from known good source"
+      steps: []
+    - name: "SMS Outbound"
+      description: "Send text to known good source"
+      steps: []
+    - name: "Boot time"
+      description: "Amount of wall clock time to boot from cold boot"
+      steps: 
+          - "Remove battery"
+          - "Setup stopwatch"
+          - "Put battery back in device"
+          - "Power on device and start stopwatch"
+          -  "Stop time when lock screen is presented"
+          -  "Anything that is >2min or regresses by 30sec is a fail"
+    - name: "Back Camera"
+      description: "Viewable image from back camera"
+      steps:
+          - "Open camera app"
+          - "Observe camera"
+          - "Take picture"
+    - name: "Front Camera"
+      description: "Viewable image from front camera"
+      steps:
+          - "Open camera app"
+          - "Switch to front camera (might need to do this before opening the camera app"
+          - "Observe camera"
+          - "Take picture"
+    - name: "Wifi"
+      description: "General stability observation of wifi."
+      steps:
+          - "Connect to wifi"
+          - "Browse three websites"
+          - "Ping three websites 5 times"
+          - "Put phone to sleep, browse new website"
+    - name: "Audio playback from browser"
+      description: "Play a youtube video from firefox"
+      steps:
+          - "Open fire fox/morph"
+          - "Visit youtube.com"
+          - "Play first video listed"
+          - "Observe sound from device"
