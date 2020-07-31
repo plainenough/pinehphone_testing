@@ -10,6 +10,7 @@ Seriously though, here are some tools that I am putting together for my testing 
 # OSes being onboarded next
 * PostmarketOS
 * Fedora
+* PureOS
 
 # OSes that will never recieve testing
 * windows
