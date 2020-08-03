@@ -1,23 +1,23 @@
 tests:
     - name: "Inbound Call"
-      description: "Taking a call phone a known good source (iphone and android)"
+      description: "Taking a call phone a known good source (iphone and android) 4G/LTE Calls"
       steps: 
           - "Call phone from remote device"
           - "Answer Call and begin conversation"
           - "Keep an eye out for: clarity, audio routing, and volume"
     - name: "Outbound Call"
-      description: "Make a call to a known good source."
+      description: "Make a call to a known good source. 4G/LTE Calls"
       steps:
           - "Call a remote device"
           - "Answer Call and begin conversation"
           - "Keep an eye out for: clarity, audio routing, and volume"
-    - name: "SMS inbound"
+    - name: "Inbound SMS"
       description: "Recieve text from known good source"
       steps: []
-    - name: "SMS Outbound"
+    - name: "Outbound SMS"
       description: "Send text to known good source"
       steps: []
-    - name: "Boot time"
+    - name: "Boot Time"
       description: "Amount of wall clock time to boot from cold boot"
       steps: 
           - "Remove battery"
@@ -39,7 +39,7 @@ tests:
           - "Switch to front camera (might need to do this before opening the camera app"
           - "Observe camera"
           - "Take picture"
-    - name: "Wifi"
+    - name: "Wifi Stability"
       description: "General stability observation of wifi."
       steps:
           - "Connect to wifi"
