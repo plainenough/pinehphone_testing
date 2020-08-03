@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from datetime import date
+import yaml
 
 with open('templates/index.html', 'r') as tmpfile:
     _mainTemplate = tmpfile.read()
@@ -21,15 +22,40 @@ magic_number = 0
 build_stat = 'pass'
 myTests = ''
 
+try:
+    with open('datasets.yaml', 'r') as tmptests:
+        testCases = yaml.load(tmptests.read())
+except Exception as e:
+    print("Faild to load predefined test cases. \n {0}\n".format(e))
+    exit(1)
+
+for item in testCases['tests']:
+    testblock = TESTTEMPLATE
+    TESTNAME = item['name']
+    TESTDESC = item['description']
+    print("{0}\n{1}\n".format(TESTNAME,TESTDESC))
+    TESTNOTES = input("Notes: ")
+    RESULTS = input("Final Results: ")
+    testblock = testblock.replace('###TEST-NAME###', TESTNAME)
+    testblock = testblock.replace('###TEST-DESCRIPTION###', TESTDESC)
+    testblock = testblock.replace('###TEST-NOTES###', TESTNOTES)
+    testblock = testblock.replace('###TEST-RESULTS###', RESULTS.upper())
+    if RESULTS.upper().strip() == "PASS":
+        testblock = testblock.replace('###RESULTS-COLOR###', 'tg-pass')
+    else:
+        testblock = testblock.replace('###RESULTS-COLOR###', 'tg-fail')
+        build_stat = 'fail'
+    myTests += testblock
+
 while magic_number < 1:
+    STOP = input("Do you have more tests? (y/n) ")
+    if STOP == 'n':
+        break
     testblock = TESTTEMPLATE
     TESTNAME = input("Test Name:  ")
     TESTDESC = input("Description: ")
     TESTNOTES = input("Notes: ")
     RESULTS = input("Final Results: ")
-    STOP = input("Do you have more tests? (y/n) ")
-    if STOP == 'n':
-        magic_number = 2
     testblock = testblock.replace('###TEST-NAME###', TESTNAME)
     testblock = testblock.replace('###TEST-DESCRIPTION###', TESTDESC)
     testblock = testblock.replace('###TEST-NOTES###', TESTNOTES)
