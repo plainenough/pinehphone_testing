@@ -1,21 +1,29 @@
 tests:
-    - name: "Inbound Call"
-      description: "Taking a call phone a known good source (iphone and android) 4G/LTE Calls"
+    - name: "Inbound Call - Connection"
+      description: "Taking a call phone a known good source"
       steps: 
           - "Call phone from remote device"
           - "Answer Call and begin conversation"
           - "Keep an eye out for: clarity, audio routing, and volume"
-    - name: "Outbound Call"
-      description: "Make a call to a known good source. 4G/LTE Calls"
+          - "Test 2g/3g and 2g/3g/4g options"
+    - name: "Outbound Call - Connection"
+      description: "Make a call to a known good source."
       steps:
           - "Call a remote device"
           - "Answer Call and begin conversation"
           - "Keep an eye out for: clarity, audio routing, and volume"
+          - "Test 2g/3g and 2g/3g/4g options"
     - name: "Inbound SMS"
       description: "Recieve text from known good source"
       steps: []
     - name: "Outbound SMS"
       description: "Send text to known good source"
+      steps: []
+    - name: "Inbound MMS"
+      description: "Recieve MMS from known good source"
+      steps: []
+    - name: "Outbound MMS"
+      description: "Send MMS to known good source"
       steps: []
     - name: "Boot Time"
       description: "Amount of wall clock time to boot from cold boot"
@@ -53,3 +61,21 @@ tests:
           - "Visit youtube.com"
           - "Play first video listed"
           - "Observe sound from device"
+    - name: "Call Audio Out"
+      description: "Call quality of microphone"
+      steps:
+          - "Reference: https://www.head-fi.org/threads/describing-sound-a-glossary.220770/"
+          - "Describe call quality recieved on known good device"
+          - "Use reference to record results"
+    - name: "Call Audio In"
+      description: "Call quality of earpiece"
+      steps:
+          - "Reference: https://www.head-fi.org/threads/describing-sound-a-glossary.220770/"
+          - "Describe call quality recieved from known good device"
+          - "Use reference to record results"
+    - name: "Call Speakerphone"
+      description: "Call quality of microphone"
+      steps:
+          - "Reference: https://www.head-fi.org/threads/describing-sound-a-glossary.220770/"
+          - "Describe call quality recieved on known good device"
+          - "Use reference to record results"
