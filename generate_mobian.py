@@ -55,13 +55,15 @@ while magic_number < 1:
     TESTNAME = input("Test Name:  ")
     TESTDESC = input("Description: ")
     TESTNOTES = input("Notes: ")
-    RESULTS = input("Final Results: ")
+    RESULTS = input("Final Results: (pass/fail/skip) ")
     testblock = testblock.replace('###TEST-NAME###', TESTNAME)
     testblock = testblock.replace('###TEST-DESCRIPTION###', TESTDESC)
     testblock = testblock.replace('###TEST-NOTES###', TESTNOTES)
     testblock = testblock.replace('###TEST-RESULTS###', RESULTS.upper())
     if RESULTS.upper().strip() == "PASS":
         testblock = testblock.replace('###RESULTS-COLOR###', 'tg-pass')
+    elif  RESULTS.upper().strip() == "SKIP":
+        testblock = testblock.replace('###RESULTS-COLOR###', 'tg-skip')
     else:
         testblock = testblock.replace('###RESULTS-COLOR###', 'tg-fail')
         build_stat = 'fail'
