@@ -35,7 +35,7 @@ for item in testCases['tests']:
     TESTDESC = item['description']
     print("{0}\n{1}\n".format(TESTNAME,TESTDESC))
     TESTNOTES = input("Notes: ")
-    RESULTS = input("Final Results: ")
+    RESULTS = input("Final Results: (pass/fail/skip) ")
     testblock = testblock.replace('###TEST-NAME###', TESTNAME)
     testblock = testblock.replace('###TEST-DESCRIPTION###', TESTDESC)
     testblock = testblock.replace('###TEST-NOTES###', TESTNOTES)
