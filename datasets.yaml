@@ -1,24 +1,48 @@
 tests:
-    - name: "Inbound Call - Connection"
+    - name: "Inbound Call - Connection 4G"
       description: "Taking a call phone a known good source"
       steps: 
           - "Call phone from remote device"
           - "Answer Call and begin conversation"
-          - "Keep an eye out for: clarity, audio routing, and volume"
-          - "Test 2g/3g and 2g/3g/4g options"
-    - name: "Outbound Call - Connection"
+          - "Test 4g"
+    - name: "Outbound Call - Connection 4G"
       description: "Make a call to a known good source."
       steps:
           - "Call a remote device"
           - "Answer Call and begin conversation"
-          - "Keep an eye out for: clarity, audio routing, and volume"
-          - "Test 2g/3g and 2g/3g/4g options"
-    - name: "Inbound SMS"
+          - "Test 4g"
+    - name: "Inbound Call - Connection 3G"
+      description: "Taking a call phone a known good source"
+      steps: 
+          - "Call phone from remote device"
+          - "Answer Call and begin conversation"
+          - "Test 2g/3g"
+    - name: "Outbound Call - Connection 3G"
+      description: "Make a call to a known good source."
+      steps:
+          - "Call a remote device"
+          - "Answer Call and begin conversation"
+          - "Test 2g/3g"
+    - name: "Inbound SMS - 4G"
       description: "Recieve text from known good source"
-      steps: []
-    - name: "Outbound SMS"
+      steps:
+          - "Ensure phone is in 4g mode"
+          - "Send text from known good source"
+    - name: "Outbound SMS - 4G"
       description: "Send text to known good source"
-      steps: []
+      steps:
+          - "Ensure phone is in 4g mode"
+          - "Send text to known good source"
+    - name: "Inbound SMS -3G"
+      description: "Recieve text from known good source"
+      steps:
+          - "Ensure phone is in 3g mode"
+          - "Send text from known good source"
+    - name: "Outbound SMS - 3G"
+      description: "Send text to known good source"
+      steps:
+          - "Ensure phone is in 3g mode"
+          - "Send text to known good source"
     - name: "Inbound MMS"
       description: "Recieve MMS from known good source"
       steps: []

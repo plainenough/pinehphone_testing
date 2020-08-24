@@ -14,9 +14,10 @@ FOOTER =  _mainTemplate.split('------')[4]
 
 myos = "UBPorts"
 build_number = input("Build Number: ")
+carrier = input("What carrier are you testing against?")
 mydate = str(date.today())
 device = "PinePhone - CE UBPorts"
-title = "{0} - {1} ".format(mydate, myos)
+title = "{0} - {1} - {2}".format(mydate, myos, carrier)
 magic_number = 0
 build_stat = 'pass'
 myTests = ''
@@ -32,6 +33,7 @@ for item in testCases['tests']:
     testblock = TESTTEMPLATE
     TESTNAME = item['name']
     TESTDESC = item['description']
+    print("---------------------------------------------------------\n\n")
     print("{0}\n{1}\n".format(TESTNAME,TESTDESC))
     TESTNOTES = input("Notes: ")
     RESULTS = input("Final Results: (pass/fail/skip) ")
@@ -79,7 +81,7 @@ BODY = BODY.replace("###DATE###", mydate)
 
 myDocument = HEADER + BODY + myTests + TESTFOOTER + FOOTER
 
-with open("{0}/{1}.html".format(myos.lower(), mydate), 'w') as outfile:
+with open("{0}/{1}-{2}.html".format(myos.lower(), mydate, carrier), 'w') as outfile:
     outfile.write(myDocument)
 
 print("Done")
