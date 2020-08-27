@@ -14,7 +14,7 @@ FOOTER =  _mainTemplate.split('------')[4]
 
 myos = "UBPorts"
 build_number = input("Build Number: ")
-carrier = input("What carrier are you testing against?")
+carrier = input("What carrier are you testing against? ")
 mydate = str(date.today())
 device = "PinePhone - CE UBPorts"
 title = "{0} - {1} - {2}".format(mydate, myos, carrier)
